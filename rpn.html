@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" lang="vi">
+	<title>Tạo Số Điện Thoại Ngẫu Nhiên</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+	<div>
+		<h1 class="display-4">Tạo Số Điện Thoại Ngẫu Nhiên</h1>
+	</div>
+	<div>	
+		<table class="table">
+			<th>Chọn Nhà Mạng</th>  
+			<tr>
+				<td><input type="checkbox" name="nm" id="1"> Viettel</td>
+				<td><input type="checkbox" name="nm" id="2"> Vinaphone</td>
+				<td><input type="checkbox" name="nm" id="3"> MobiFone</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="nm" id="4"> Vietnamobile</td>
+				<td><input type="checkbox" name="nm" id="5"> Gmobile</td>
+				<td><input type="checkbox" name="nm" id="6"> Indochina Telecom</td>
+			</tr>
+		</table>
+		<button type="button" id="btn1" class="btn btn-info">Chọn tất cả</button>
+		<button type="button" id="btn2" class="btn btn-info">Bỏ chọn tất cả</button>
+	</div>
+	<br>
+	<div class="form-group">
+		<label for="quantity">Bạn muốn tạo bao nhiêu số?</label>
+		<input type="text" class="form-group" id="quantity" placeholder=" 0">
+	</div>
+	<div><button type="button" id="start" class="btn btn-success">Khởi tạo</button></div>
+	<br>
+	<div><textarea readonly="" class="form-control" id="output" rows="20">
+	</textarea></div>
+	<script language="javascript">
+		document.getElementById("btn1").onclick = function () 
+		{
+			var checkboxes = document.getElementsByName("nm");
+			for (var i = 0; i < checkboxes.length; i++){
+				checkboxes[i].checked = true;
+			}
+		};
+		document.getElementById("btn2").onclick = function () 
+		{
+			var checkboxes = document.getElementsByName("nm");
+			for (var i = 0; i < checkboxes.length; i++){
+				checkboxes[i].checked = false;
+			}
+		};
+		document.getElementById("start").onclick = function () {
+			
+		}
+	</script>
+</body>
+</html>
