@@ -71,12 +71,12 @@
 				event.preventDefault();
 				document.getElementById("start").click();
 			}
-		});
+		}
 		document.getElementById("start").onclick = function () {
 			var Viettel = ['032', '033', '034', '035', '036', '037', '038', '039', '096', '097', '098', '086']
 			var Vietnamobile = ['056', '052', '058', '092']
 			var MobiFone = ['070', '076', '077', '078', '079', '089', '090', '093']
-			var	Vinaphone = ['081', '082', '083', '084', '085', '088', '091', '094']
+			var Vinaphone = ['081', '082', '083', '084', '085', '088', '091', '094']
 			var Gmobile = ['059', '099']
 			var Indochina = ['087']
 			var chklist = []
@@ -101,7 +101,7 @@
 			if (chklist.length==0) {
 				alert("Vui lòng chọn ít nhất một nhà mạng!")
 			}
-			else{
+			else { 
 				var l = document.getElementById("quantity").value
 				var op = ""
 				for (var i = 0; i < l; i++) {
