@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8" lang="vi">
 	<title>Tạo Số Điện Thoại Ngẫu Nhiên</title>
+	<meta charset="UTF-8" lang="vi">
+	<meta name="description" content="Tạo số điện thoại di động ngẫu nhiên">
+	<meta name="keywords" content="SĐT, điện thoại, di động, ngẫu nhiên, random, viettel, vina, vinaphone, mobi, mobifone, vnmb, Vietnamobile, Gmobile, Indochina, Telecom, phone, number">
+	<meta name="author" content="Tamkien Cao">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -33,29 +36,81 @@
 	<br>
 	<div class="form-group">
 		<label for="quantity">Bạn muốn tạo bao nhiêu số?</label>
-		<input type="text" class="form-group" id="quantity" placeholder=" 0">
+		<input type="text" class="form-group" id="quantity" placeholder=" Nhập một số vào đây">
 	</div>
 	<div><button type="button" id="start" class="btn btn-success">Khởi tạo</button></div>
 	<br>
-	<div><textarea readonly="" class="form-control" id="output" rows="20">
+	<div><textarea readonly="" class="form-control" id="output" rows="10">
 	</textarea></div>
+	<br>
+	<div class="alert alert-warning" role="alert">
+		Chú ý! <br> Ứng dụng này không được tạo ra cho mục đích xấu. Bạn tự chịu trách nhiệm với cách bạn sử dụng công cụ của tôi. <br>
+		Đầu số của các nhà mạng chỉ mang tính tương đối do thuê bao có thể chuyển mạng giữ số. <br>
+	</div>
+	<div class="alert alert-success" role="alert">
+		Đây là một sản phẩm của <a href="http://github.com/tamkien">Cao Tam Kiên</a>.
+	</div>
 	<script language="javascript">
 		document.getElementById("btn1").onclick = function () 
 		{
-			var checkboxes = document.getElementsByName("nm");
+			var checkboxes = document.getElementsByName("nm")
 			for (var i = 0; i < checkboxes.length; i++){
 				checkboxes[i].checked = true;
 			}
-		};
+		}
 		document.getElementById("btn2").onclick = function () 
 		{
-			var checkboxes = document.getElementsByName("nm");
+			var checkboxes = document.getElementsByName("nm")
 			for (var i = 0; i < checkboxes.length; i++){
 				checkboxes[i].checked = false;
 			}
-		};
+		}
+		var input = document.getElementById("quantity");
+		input.addEventListener("keyup", function(event) {
+			if (event.keyCode === 13) {
+				event.preventDefault();
+				document.getElementById("start").click();
+			}
+		});
 		document.getElementById("start").onclick = function () {
-			
+			var Viettel = ['032', '033', '034', '035', '036', '037', '038', '039', '096', '097', '098', '086']
+			var Vietnamobile = ['056', '052', '058', '092']
+			var MobiFone = ['070', '076', '077', '078', '079', '089', '090', '093']
+			var	Vinaphone = ['081', '082', '083', '084', '085', '088', '091', '094']
+			var Gmobile = ['059', '099']
+			var Indochina = ['087']
+			var chklist = []
+			if (document.getElementById("1").checked) {
+				chklist = chklist.concat(Viettel)
+			}
+			if (document.getElementById("2").checked) {
+				chklist = chklist.concat(Vinaphone)
+			}
+			if (document.getElementById("3").checked) {
+				chklist = chklist.concat(MobiFone)
+			}
+			if (document.getElementById("4").checked) {
+				chklist = chklist.concat(Vietnamobile)
+			}
+			if (document.getElementById("5").checked) {
+				chklist = chklist.concat(Gmobile)
+			}
+			if (document.getElementById("6").checked) {
+				chklist = chklist.concat(Indochina)
+			}
+			if (chklist.length==0) {
+				alert("Vui lòng chọn ít nhất một nhà mạng!")
+			}
+			else{
+				var l = document.getElementById("quantity").value
+				var op = ""
+				for (var i = 0; i < l; i++) {
+					var item = chklist[Math.floor(Math.random()*chklist.length)]
+					var number = ("0000000" + Math.floor(Math.random() * 10000000)).slice(-7)
+					op = op.concat(item + number + "\n")
+				}
+				document.getElementById("output").innerHTML = op
+			}
 		}
 	</script>
 </body>
