@@ -1,117 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Tạo Số Điện Thoại Ngẫu Nhiên</title>
-	<meta charset="UTF-8" lang="vi">
-	<meta name="description" content="Tạo số điện thoại di động ngẫu nhiên">
-	<meta name="keywords" content="SĐT, điện thoại, di động, ngẫu nhiên, random, viettel, vina, vinaphone, mobi, mobifone, vnmb, Vietnamobile, Gmobile, Indochina, Telecom, phone, number">
-	<meta name="author" content="Tamkien Cao">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Tạo Số Điện Thoại Ngẫu Nhiên</title>
+    <meta charset="UTF-8" lang="vi">
+    <meta content="Tạo số điện thoại di động ngẫu nhiên" name="description">
+    <meta content="SĐT, điện thoại, di động, ngẫu nhiên, random, viettel, vina, vinaphone, mobi, mobifone, vnmb, Vietnamobile, Gmobile, Indochina, Telecom, phone, number"
+          name="keywords">
+    <meta content="Tamkien Cao" name="author">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body class="container">
-	<div>
-		<h1 class="display-4">Tạo Số Điện Thoại Ngẫu Nhiên</h1>
-	</div>
-	<div>	
-		<table class="table">
-			<th>Chọn Nhà Mạng</th>  
-			<tr>
-				<td><input type="checkbox" name="nm" id="1"> Viettel</td>
-				<td><input type="checkbox" name="nm" id="2"> Vinaphone</td>
-				<td><input type="checkbox" name="nm" id="3"> MobiFone</td>
-			</tr>
-			<tr>
-				<td><input type="checkbox" name="nm" id="4"> Vietnamobile</td>
-				<td><input type="checkbox" name="nm" id="5"> Gmobile</td>
-				<td><input type="checkbox" name="nm" id="6"> Indochina Telecom</td>
-			</tr>
-		</table>
-		<button type="button" id="btn1" class="btn btn-info">Chọn tất cả</button>
-		<button type="button" id="btn2" class="btn btn-info">Bỏ chọn tất cả</button>
-	</div>
-	<br>
-	<div class="form-group">
-		<label for="quantity">Bạn muốn tạo bao nhiêu số?</label>
-		<input type="text" class="form-group" id="quantity" placeholder=" Nhập một số vào đây">
-	</div>
-	<div><button type="button" id="start" class="btn btn-success">Khởi tạo</button></div>
-	<br>
-	<div><textarea readonly="" class="form-control" id="output" rows="10">
+<div>
+    <h1 class="display-4">Tạo Số Điện Thoại Ngẫu Nhiên</h1>
+</div>
+<div>
+    <table class="table">
+        <th>Chọn Nhà Mạng</th>
+        <tr>
+            <td><label for="1"></label><input id="1" name="nm" type="checkbox"> Viettel</td>
+            <td><label for="2"></label><input id="2" name="nm" type="checkbox"> Vinaphone</td>
+            <td><label for="3"></label><input id="3" name="nm" type="checkbox"> MobiFone</td>
+        </tr>
+        <tr>
+            <td><label for="4"></label><input id="4" name="nm" type="checkbox"> Vietnamobile</td>
+            <td><label for="5"></label><input id="5" name="nm" type="checkbox"> Gmobile</td>
+            <td><label for="6"></label><input id="6" name="nm" type="checkbox"> Indochina Telecom</td>
+        </tr>
+    </table>
+    <button class="btn btn-info" id="btn1" type="button">Chọn tất cả</button>
+    <button class="btn btn-info" id="btn2" type="button">Bỏ chọn tất cả</button>
+</div>
+<br>
+<div class="form-group">
+    <label for="quantity">Bạn muốn tạo bao nhiêu số?</label>
+    <input class="form-group" id="quantity" placeholder=" Nhập một số vào đây" type="text">
+</div>
+<div>
+    <button class="btn btn-success" id="start" type="button">Khởi tạo</button>
+</div>
+<br>
+<div><label for="output"></label><textarea class="form-control" id="output" readonly="" rows="10">
 	</textarea></div>
-	<br>
-	<div class="alert alert-warning" role="alert">
-		Chú ý! <br> Ứng dụng này không được tạo ra cho mục đích xấu. Bạn tự chịu trách nhiệm với cách bạn sử dụng công cụ của tôi. <br>
-		Đầu số của các nhà mạng chỉ mang tính tương đối do thuê bao có thể chuyển mạng giữ số. <br>
-	</div>
-	<div class="alert alert-success" role="alert">
-		Đây là một sản phẩm của <a href="http://github.com/tamkien">Cao Tam Kiên</a>. Mọi ý kiến đóng góp xin gửi về email cao99@bk.ru. Trân trọng cảm ơn!
-	</div>
-	<script language="javascript">
-		document.getElementById("btn1").onclick = function () 
-		{
-			var checkboxes = document.getElementsByName("nm")
-			for (var i = 0; i < checkboxes.length; i++){
-				checkboxes[i].checked = true;
-			}
-		}
-		document.getElementById("btn2").onclick = function () 
-		{
-			var checkboxes = document.getElementsByName("nm")
-			for (var i = 0; i < checkboxes.length; i++){
-				checkboxes[i].checked = false;
-			}
-		}
-		var input = document.getElementById("quantity");
-		input.addEventListener("keyup", function(event) {
-			if (event.keyCode === 13) {
-				event.preventDefault();
-				document.getElementById("start").click();
-			}
-		})
-		document.getElementById("start").onclick = function () {
-			var Viettel = ['032', '033', '034', '035', '036', '037', '038', '039', '096', '097', '098', '086']
-			var Vietnamobile = ['056', '052', '058', '092']
-			var MobiFone = ['070', '076', '077', '078', '079', '089', '090', '093']
-			var Vinaphone = ['081', '082', '083', '084', '085', '088', '091', '094']
-			var Gmobile = ['059', '099']
-			var Indochina = ['087']
-			var chklist = []
-			if (document.getElementById("1").checked) {
-				chklist = chklist.concat(Viettel)
-			}
-			if (document.getElementById("2").checked) {
-				chklist = chklist.concat(Vinaphone)
-			}
-			if (document.getElementById("3").checked) {
-				chklist = chklist.concat(MobiFone)
-			}
-			if (document.getElementById("4").checked) {
-				chklist = chklist.concat(Vietnamobile)
-			}
-			if (document.getElementById("5").checked) {
-				chklist = chklist.concat(Gmobile)
-			}
-			if (document.getElementById("6").checked) {
-				chklist = chklist.concat(Indochina)
-			}
-			if (chklist.length==0) {
-				alert("Vui lòng chọn ít nhất một nhà mạng!")
-			}
-			else { 
-				var l = document.getElementById("quantity").value
-				var op = ""
-				for (var i = 0; i < l; i++) {
-					var item = chklist[Math.floor(Math.random()*chklist.length)]
-					var number = ("0000000" + Math.floor(Math.random() * 10000000)).slice(-7)
-					op = op.concat(item + number + "\n")
-				}
-				document.getElementById("output").innerHTML = op
-			}
-		}
-	</script>
+<br>
+<div class="alert alert-warning" role="alert">
+    Chú ý! <br> Ứng dụng này không được tạo ra cho mục đích xấu. Bạn tự chịu trách nhiệm với cách bạn sử dụng công cụ
+    của tôi. <br>
+    Đầu số của các nhà mạng chỉ mang tính tương đối do thuê bao có thể chuyển mạng giữ số. <br>
+</div>
+<div class="alert alert-success" role="alert">
+    Đây là một sản phẩm của <a href="http://github.com/tamkien">Cao Tam Kiên</a>.
+</div>
+<script>
+    document.getElementById("btn1").onclick = function () {
+        const checkboxes = document.getElementsByName("nm");
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = true;
+        }
+    };
+    document.getElementById("btn2").onclick = function () {
+        const checkboxes = document.getElementsByName("nm");
+        for (let i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = false;
+        }
+    };
+    document.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("start").click();
+        }
+    });
+    document.getElementById("start").onclick = function () {
+        const Viettel = ['032', '033', '034', '035', '036', '037', '038', '039', '096', '097', '098', '086'];
+        const Vietnamobile = ['056', '052', '058', '092'];
+        const MobiFone = ['070', '076', '077', '078', '079', '089', '090', '093'];
+        const Vinaphone = ['081', '082', '083', '084', '085', '088', '091', '094'];
+        const Gmobile = ['059', '099'];
+        const Indochina = ['087'];
+        let checklist = [];
+        if (document.getElementById("1").checked) {
+            checklist = checklist.concat(Viettel)
+        }
+        if (document.getElementById("2").checked) {
+            checklist = checklist.concat(Vinaphone)
+        }
+        if (document.getElementById("3").checked) {
+            checklist = checklist.concat(MobiFone)
+        }
+        if (document.getElementById("4").checked) {
+            checklist = checklist.concat(Vietnamobile)
+        }
+        if (document.getElementById("5").checked) {
+            checklist = checklist.concat(Gmobile)
+        }
+        if (document.getElementById("6").checked) {
+            checklist = checklist.concat(Indochina)
+        }
+
+        if (checklist.length === 0) {
+            alert("Vui lòng chọn ít nhất một nhà mạng!")
+        } else {
+            const l = document.getElementById("quantity").value;
+            let op = "";
+            for (let i = 0; i < l; i++) {
+                const item = checklist[Math.floor(Math.random() * checklist.length)];
+                const number = ("0000000" + Math.floor(Math.random() * 10000000)).slice(-7);
+                op = op.concat(item + number + "\n")
+            }
+            document.getElementById("output").innerHTML = op
+        }
+    }
+</script>
 </body>
 </html>
